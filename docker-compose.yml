@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  voice:
+    image: ticnspadmin/eaas-voice
+    command: npm start
+    environment:
+      LOG_LEVEL: "debug"
+    ports:
+      - "8010:3000"
+    networks:
+      - ticnsp-eaas
+
+networks:
+  ticnsp-eaas:
+    driver: bridge
